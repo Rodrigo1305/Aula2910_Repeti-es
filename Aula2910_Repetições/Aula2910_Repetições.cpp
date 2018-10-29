@@ -3,100 +3,39 @@
 
 #include"stdafx.h"
 #include<stdlib.h>
-#include <iostream>
 
 
 
-int LerNumeroInteiro()
+
+int LerValorInteiro()
 {
-	int a;
+	int valor = 0;
+    printf("Favor Digitar um Numero Inteiro: ");
+	scanf_s("%i", &valor);
+    return valor;
 
-	printf("Favor digitar um numero inteiro: ");
-	scanf_s("%i", &a);
-
-	return a;
 }
 
 
-void DetectarValoresEmOrdem()
+void ImprimirSequencialEntreInteiros()
 {
-	int i = 0;
-	int anterior = 0, numero = 0;
-	int crescente = 1; 
+	int n1 = LerValorInteiro();
+	int n2 = LerValorInteiro();
 
-	while (i < 5)
+	if (n1 <= n2)
 	{
-		numero = LerNumeroInteiro();
-
-		if (i != 0)
+		int valorfinal = n2 - 1;
+		while (n1 < valorfinal)
 		{
-			if (anterior >= numero)
-			{
-				crescente = 0;
-			}
+			n1++
+				printf("%i\t", n1);
+
 
 		}
 
-		anterior = numero;
-		i++;
+
+
 	}
-
-	if (crescente == 1)
-	{
-		printf("Esta em ordem crescente");
-	}
-	else
-	{
-		printf("Nao esta em ordem crescente");
-	}
-
-}
-
-
-int main()
-{
-
-	//while (true) 
-	//{
-		//printf("a");
-//	}
-
-	int a = 0;
-	while (a < 5)
-	{
-		printf("%i\t", a);
-		a++; 
-	}
-
-	printf("\n\n");
-
-	a = 0;
-
-	while (a <= 5)
-	{
-		printf("%i\t", a);
-		a++; 
-	}
-
-	printf("\n\n");
-
-	do
-	{
-		a++; 
-	printf("%i\t", a);
-	} while (a <= 5);
-
-
-
-	DetectarValoresEmOrdem();
-
-
-
-
-	printf("\n\n\n");
-	system("pause");
-
-	return 0;
 
 
 
